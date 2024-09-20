@@ -34,3 +34,67 @@ $$\lim_{x\to 0} \frac{1}{x^2} \text{ does not exist}$$
 $$\lim_{x \to \infty} \frac{1}{x} = \lim_{x \to -\infty} \frac{1}{x} = 0$$
 $$\lim_{x \to 0} \frac{1}{x} \text{ does not exist}$$
 $$\lim_{x \to 0^+} \frac{1}{x} = \infty \text{ and} \lim_{x \to 0^-} \frac{1}{x} = -\infty$$
+# Calculating limits
+When we are asked to calculate a limit which is not one of the above mentioned standard limits, we must calculate it ourselves.
+
+## Well-behaved functions
+Functions like polynomials, exponential functions, logarithms, sine and cosine are **well-behaved** in the sense that a limit to a point $c$ in the domain of the function $f$ can be calculated by direct substitution: $$\lim_{x\to c} f(x) = f(c)$$
+## Limit laws 
+If we assume that both $\lim_{x\to c} f(x) = L$ and $\lim_{x\to c} g(x) = M$ exist, the following rules apply to these limits:
+
+| Name                   | Rule                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------ |
+| Sum rule               | $$\lim_{x\to c}(f(x)+g(x)) = L + M$$                                           |
+| Difference rule        | $$\lim_{x\to c}(f(x)-g(x)) = L - M$$                                           |
+| Constant multiple rule | $$\lim_{x \to c}(k \cdot f(x)) = k \cdot L$$                                   |
+| Product rule           | $$\lim_{x \to c}(f(x) \cdot g(x)) = L \cdot M$$                                |
+| Quotient rule          | $$\lim_{x \to c}\frac{f(x)}{g(x)} = \frac{L}{M}, M \neq 0$$                    |
+| Power rule             | $$\lim_{x \to c}(f(x))^n = L^n \text{, with } n \in \mathbb{N}$$               |
+| Root rule              | $$\lim_{x \to c}\sqrt[n]{f(x)} = \sqrt[n]{L} \text{, with } n \in \mathbb{N}$$ |
+
+## Indeterminate forms
+We call a limit an indeterminate form when applying the limit laws leads to an indecisive result.
+This most often occurs when dealing with dividing by zero or dealing with $\infty$ and $-\infty$. Here is a list of indeterminate forms:
+
+| Limit law       | Limit                               | Notation                                          |
+| --------------- | ----------------------------------- | ------------------------------------------------- |
+| Difference rule | $$\lim_{x\to c}f(x)-g(x)$$          | $$\infty - \infty$$                               |
+| Product rule    | $$\lim_{x\to c} f(x) \cdot g(x)$$   | $$0 \cdot \infty$$                                |
+| Quotient rule   | $$\lim_{x \to c}\frac{f(x)}{g(x)}$$ | $$\frac{\infty}{\infty} \text{ or } \frac{0}{0}$$ |
+| Power rule      | $$\lim_{x\to c}f(x)^{g(x)}$$        | $$1^\infty\text{, }0^0\text{ or }\infty^0$$       |
+To go along with these indeterminate forms there are also some fake indeterminate forms. These look alike but they resolve to a single value.
+
+| Limit law     | Limit                               | Notation                               | Value                                                             |
+| ------------- | ----------------------------------- | -------------------------------------- | ----------------------------------------------------------------- |
+| Sum rule      | $$\lim_{x\to c}f(x)+g(x)$$          | $$\infty + \infty$$                    | $$\infty$$                                                        |
+| Product rule  | $$\lim_{x\to c} f(x) \cdot g(x)$$   | $$\infty \cdot \infty$$                | $$\infty$$                                                        |
+| Quotient rule | $$\lim_{x \to c}\frac{f(x)}{g(x)}$$ | $$\frac{c}{\infty}$$                   | $$0 \text{ for any } c \in \mathbb{R}$$                           |
+| Power rule    | $$\lim_{x\to c}f(x)^{g(x)}$$        | $$\infty^\alpha$$<br>$$\infty^\alpha$$ | $$\infty \text{ if } \alpha > 0$$<br>$$0 \text{ if } \alpha < 0$$ |
+## Conjugate Trick
+$a+b$ is the conjugate of $a-b$ (and vice versa), we can use this in combination with the following fact:
+> $$(a+b)(a-b)=a^2-b^2$$
+
+To get rid of some indeterminate forms, see the following example:
+$$
+\lim_{x \to 7}\frac{\sqrt{x+2}-3}{x-7} = 
+\lim_{x \to 7}\frac{\sqrt{x+2}-3}{x-7} \cdot \frac{\sqrt{x+2}+3}{\sqrt{x+2}+3} =
+$$
+$$
+\lim_{x \to 7}\frac{(\sqrt{x+2}+3)^2 - 3^2}{(x-7) (\sqrt{x+2}+3)} =
+\lim_{x \to 7}\frac{x-7}{(x-7) (\sqrt{x+2}+3)} =
+\lim_{x \to 7}\frac{1}{\sqrt{x+2}+3}
+$$
+now we can fill in $7$ for our $x$
+$$
+\frac{1}{\sqrt{7+2}+3} =
+\frac{1}{6}
+$$
+## The sandwich theorem
+> If $\lim_{x\to c} g(x)$ and $\lim_{x\to c} h(x)$ exist, and they are equal (say $L$), then $\lim_{x\to c} f(x)$ exists, and it is equal to $L$.
+
+For this it to work it is important that 
+$$
+g(x) \le f(x) \le h(x)
+\text{ for all } x \ne c
+$$
+![[Pasted image 20240920114049.png]]

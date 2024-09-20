@@ -3,5 +3,5 @@ A function is most often written as a formula like this: $f(x) = x^2 + 1$, prono
 
 We call the [[Sets|set]] of values a function takes as input the [[Domain|domain]] of the function and the we call the possible output values the [[Co-domain|co-domain]] of the function. We can also illustrate this using some arrows.
 
-![[Pasted image 20240919183200.png]]
+![[Pasted image 20240920093014.png]]
 > Here we see function $f$ transforms its input from its domain $D$ to its co-domain $C$

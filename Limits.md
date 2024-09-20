@@ -98,3 +98,34 @@ g(x) \le f(x) \le h(x)
 \text{ for all } x \ne c
 $$
 ![[Pasted image 20240920114049.png]]
+## Getting rid of indeterminate-ness
+### Limits involving 0
+If $x \to 0$, factor out the lowest power of $x$
+>[!Example] 
+> Calculate $\lim_{x \to 0}\frac{2x^2-6x}{3x^2+2x}$.
+> The lowest power of $x$ is $x^1$ so we divide by $x$:
+> $$
+> \lim_{x \to 0}\frac{2x^2-6x}{3x^2+2x} =
+> \lim_{x \to 0}\frac{2x-6}{3x+2}
+> $$
+> Then we fill in $0$ for $x$:
+> $$
+> \frac{2 \cdot 0 - 6}{3 \cdot 0 + 2} =
+> \frac{-6}{2} = -3
+> $$
+
+
+### Limits involving $\infty$
+If $x \to \infty$, factor out the highest power of $x$. When filling in $\infty$ we must not forget the [[Limits#Indeterminate forms|indeterminate forms]].
+>[!Example] 
+> Calculate $\lim_{x \to \infty}\frac{2x^2-6x}{3x^2+2x}$.
+> The highest power of $x$ is $x^2$ so we divide by $x^2$:
+> $$
+> \lim_{x \to \infty}\frac{2x^2-6x}{3x^2+2x} =
+> \lim_{x \to \infty}\frac{2-\frac{6}{x}}{3+\frac{2}{x}}
+> $$
+> Then we fill in $\infty$ for $x$:
+> $$
+> \lim_{x \to \infty}\frac{2-\frac{6}{\infty}}{3+\frac{2}{\infty}} =
+> \frac{2}{3}
+> $$
